@@ -61,7 +61,7 @@ public void test() throws InterruptedException {
 	Thread.sleep(2000);
 	Driver.findElement(By.xpath(".//*[@id='sms']")).sendKeys("70");
 	Driver.findElement(By.xpath(".//*[@id='exes']")).sendKeys("700");
-	Driver.findElement(By.xpath(".//*[@id='eobspooja']")).sendKeys("3");
+	Driver.findElement(By.xpath(".//*[@id='eobs']")).sendKeys("3");
 	
 	Thread.sleep(2000);
 	
