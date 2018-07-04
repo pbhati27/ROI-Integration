@@ -59,7 +59,7 @@ public void test() throws InterruptedException {
 	
 	Driver.findElement(By.xpath(".//div[1]/div[2]/div/div/div/div[1]/label/span")).click();
 	Thread.sleep(2000);
-	Driver.findElement(By.xpath(".//*[@id='smskunwar']")).sendKeys("70");
+	Driver.findElement(By.xpath(".//*[@id='sms']")).sendKeys("70");
 	Driver.findElement(By.xpath(".//*[@id='exes']")).sendKeys("700");
 	Driver.findElement(By.xpath(".//*[@id='eobs']")).sendKeys("3");
 	
