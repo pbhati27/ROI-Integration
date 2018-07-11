@@ -13,7 +13,7 @@ public class TC_001 {
 	
 	@Test(priority=1)
 	public void Initialise() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Aditya.Kumar\\Downloads\\com.roi.selenium\\Resources\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Aditya.Kumar\\Desktop\\Schema Gain Calculator\\com.roi.selenium1\\Resources\\chromedriver.exe");
 		Driver = new ChromeDriver();
 		Driver.get("http://10.120.101.74:8088/ROI_UI/index.html#/wizard");
 		Driver.manage().window().maximize();
