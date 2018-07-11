@@ -1,17 +1,14 @@
 package com.roi.selenium;
 
-
+import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class Demo1 {
+public class TC_006 {
 
 	WebDriver Driver;
 	
@@ -21,6 +18,7 @@ public void Initialise() throws InterruptedException {
 	Driver = new ChromeDriver();
 	Driver.get("http://10.120.101.74:8088/ROI_UI/index.html#/wizard");
 	Thread.sleep(7000);
+	Driver.manage().window().maximize();
 }
 
 @Test
@@ -53,30 +51,19 @@ public void test() throws InterruptedException {
 	Driver.findElement(By.xpath(".//*[@id='conp']")).sendKeys("30");
 	Driver.findElement(By.xpath(".//*[@id='cofp']")).sendKeys("70");
 	Thread.sleep(6000);
-	Driver.findElement(By.xpath(".//*[contains(text(), 'Smoke Suite')]")).click();
-	
-	Thread.sleep(5000);
-	
-	Driver.findElement(By.xpath(".//div[1]/div[2]/div/div/div/div[1]/label/span")).click();
-	Thread.sleep(2000);
-	Driver.findElement(By.xpath(".//*[@id='sms']")).sendKeys("70");
-	Driver.findElement(By.xpath(".//*[@id='exes']")).sendKeys("700");
-	Driver.findElement(By.xpath(".//*[@id='eobs']")).sendKeys("3");
-	
-	Thread.sleep(2000);
-	
+
 	Driver.findElement(By.xpath(".//li[@class='next']/button[@ng-click='validate()']")).click();
 	Thread.sleep(4000);
-	Driver.findElement(By.xpath(".//li[@class='next']/button[@ng-click='createObject()']")).click();
-	Thread.sleep(2000);
-	
-	Driver.switchTo().alert().accept();
-	System.out.println("Success");
-
+	String Error = Driver.findElement(By.xpath("//div[@class='alert bg-danger ng-binding ng-scope']")).getText();
+	System.out.println(Error);
+	String ExpectedError = "Error ! Enter the test suite details";
+	Assert.assertEquals(ExpectedError,Error);
 }
 @AfterMethod
-	public void close()
-	{
-		Driver.close();
-	}
+public void close()
+{
+	Driver.close();
+}
+
+	
 }
