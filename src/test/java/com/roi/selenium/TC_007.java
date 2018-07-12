@@ -24,7 +24,7 @@ public class TC_007 {
 	public void test() throws InterruptedException {
 		Thread.sleep(3000);
 		Driver.findElement(By.xpath(".//div/input[@id='Appname']")).sendKeys("ABC");
-		Driver.findElement(By.xpath(".//*[@id='AppID']pooja")).sendKeys("123654");
+		Driver.findElement(By.xpath(".//*[@id='AppID']")).sendKeys("123654");
 //		Select s = new Select(Driver.findElement(By.xpath("//div/button[@data-id='tech']")));
 //		s.selectByIndex(2);
 //		Select s1 = new Select(Driver.findElement(By.xpath("//div/button[@data-id='bc']")));
